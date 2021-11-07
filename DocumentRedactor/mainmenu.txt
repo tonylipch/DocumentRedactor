@@ -1,0 +1,6 @@
+1. List of files
+2. Create file
+3. Write content to file
+4. Merge files
+5. Show file status
+0. Exit
