@@ -1,4 +1,10 @@
 #include "Document.h"
+#include <string.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <ios>
+
 
 
 Document::Document(long size, const char* date, const char* owner, int fontSize, char* fontColor)
@@ -39,3 +45,31 @@ void Document::printStatus(std::ostream& out) {
 	out << "fontColor=" << this->fontColor<< "\n";
 	out << "fontSize=" << this->fontSize << "\n";
 }
+
+void Document::saveToStream(ostream& out) {
+	File::saveToStream(out);
+	out << fontColor << "\n" << fontSize << "\n";
+	
+}
+
+void Document::loadFromStream(istream& in) {
+	File::loadFromStream(in);
+	string line;
+
+	std::getline(in, line);
+	fontColor = _strdup(line.c_str());
+	
+
+	std::getline(in, line);
+	fontSize = atoi(line.c_str());
+	
+
+	std::getline(in, line);
+	date = _strdup(line.c_str());
+
+	std::getline(in, line);
+	content = _strdup(line.c_str());
+
+}
+
+

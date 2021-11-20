@@ -98,6 +98,8 @@ void create_file() {
     files[nFiles++] = doc;
 }
 
+
+
 void write_to_file() {
     int fileNo;
     cout << "Which file numer to write: ";
@@ -109,6 +111,41 @@ void write_to_file() {
     cout << "Content has written to file #" << fileNo;
     anykey();
 }
+
+void saveFileToDisk()
+{
+    int fileNo;
+    cout << "Enter id of file to write to disk ";
+    fileNo = getNumber();
+
+    string filepath;
+    cout << "enter file path";
+    cin >> filepath;
+    
+    files[fileNo]->saveToDisk(filepath);
+        
+}
+
+void readFileFromDisk()
+{
+    int fileNo;
+    cout << "Enter id of file which you wann to read";
+    fileNo = getNumber();
+
+    string filepath;
+
+    cout << "Enter path of file\n";
+
+    cin >> filepath;
+
+    files[fileNo]->readFromDisk(filepath);
+    files[fileNo] ->printStatus(cout);
+
+    cin.get();
+    cin.get();
+
+}
+
 
 void merge_files() {
 
@@ -149,11 +186,6 @@ void merge_files() {
 
 }
 
-void show_file_status() 
-{
-
-      
-}
 
 
 
@@ -172,10 +204,11 @@ void printMenu(const char* filename) {
 }
 
 void mainControl() {
+    
 
     int key;
     while (1) {
-        printMenu("mainmenu.txt");
+        printMenu("mainmenueng.txt");
         key = getNumber();
         switch (key) {
         case 1:
@@ -191,7 +224,12 @@ void mainControl() {
             merge_files();
             break;
         case 5:
-            show_file_status();
+            saveFileToDisk();
+          
+            break;
+        case 6:
+            readFileFromDisk();
+
             break;
 
         case 0:
@@ -214,8 +252,26 @@ void mainControl() {
 
 int main()
 {
+    setlocale(LC_ALL, "Russian");
     mainControl();
 
 //    File* f = new File (100l, "2021-09-12", "anton");
+
+    return -1;
 }
 
+
+
+int main1()  {
+
+//    File* f = new File(100, "a", "b");
+//    f->write((char*)"mama rama");
+//    f->saveToDisk("d:\\test.txt");
+
+    File* f;
+    f = new File(1, "x", "y");
+    f->readFromDisk("d:\\test.txt");
+
+    return 0;
+    
+}

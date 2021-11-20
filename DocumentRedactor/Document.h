@@ -20,5 +20,9 @@ public:
 	Document& operator+ (Document& doc); 
 	void printStatus(std::ostream& out);
 
+protected:
+	virtual void saveToStream(ostream& out);
+	virtual void loadFromStream(istream& in);
+
 };
 

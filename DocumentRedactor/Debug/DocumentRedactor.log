@@ -1,2 +1,3 @@
-﻿  Document.cpp
+﻿  DocumentRedactor.cpp
+C:\Users\admin\source\repos\DocumentRedactor\DocumentRedactor\DocumentRedactor.cpp(174,13): warning C4101: fileNo3: неиспользованная локальная переменная
   DocumentRedactor.vcxproj -> C:\Users\admin\source\repos\DocumentRedactor\Debug\DocumentRedactor.exe

@@ -19,6 +19,16 @@ public:
 	char* read();
 	void write(char* content);
 	void printStatus(std::ostream& out);
+
+	void saveToDisk(string fileName);
+	void readFromDisk(string fileName);
+
+
+protected:
+	virtual void saveToStream(ostream& out);
+	virtual void loadFromStream(istream& in);
+
+
 };
 
 #define _CRT_SECURE_NO_WARNINGS
