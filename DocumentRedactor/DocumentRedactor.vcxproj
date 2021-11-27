@@ -150,10 +150,13 @@
     <ClCompile Include="Document.cpp" />
     <ClCompile Include="DocumentRedactor.cpp" />
     <ClCompile Include="File.cpp" />
+    <ClCompile Include="Savable.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Document.h" />
     <ClInclude Include="File.h" />
+    <ClInclude Include="saveable.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="mainmenu.txt" />

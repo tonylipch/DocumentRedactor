@@ -46,44 +46,7 @@ void File::printStatus(std::ostream &out) {
 }
 
 
-void File::saveToStream(ostream& out) {
-	out << size << "\n" << owner << "\n" << date << "\n" << content << "\n";
-}
-
-void File::loadFromStream(istream& in) {
-	string line;
-
-	std::getline(in, line);
-	size = atoi(line.c_str());
-
-	std::getline(in, line);
-	owner = _strdup(line.c_str());// line.c_str() - is reference to character buffer inside the string type
-
-	std::getline(in, line);
-	date = _strdup(line.c_str());
-
-	std::getline(in, line);
-	content = _strdup(line.c_str());
-
-}
 
 
-
-void File::saveToDisk(string fileName) {
-	ofstream out;
-	out.open(fileName);
-	saveToStream(out);
-	out.flush();
-	out.close();
-
-}
-
-void File::readFromDisk(string fileName) {
-	ifstream in;
-	in.open(fileName);
-	loadFromStream(in);
-	in.close();
-
-}
 
 

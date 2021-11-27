@@ -46,23 +46,26 @@ void Document::printStatus(std::ostream& out) {
 	out << "fontSize=" << this->fontSize << "\n";
 }
 
+
+
+
+
+
 void Document::saveToStream(ostream& out) {
-	File::saveToStream(out);
+	out << size << "\n" << owner << "\n" << date << "\n" << content << "\n";
+
 	out << fontColor << "\n" << fontSize << "\n";
 	
 }
 
 void Document::loadFromStream(istream& in) {
-	File::loadFromStream(in);
 	string line;
 
 	std::getline(in, line);
-	fontColor = _strdup(line.c_str());
-	
+	size = atoi(line.c_str());
 
 	std::getline(in, line);
-	fontSize = atoi(line.c_str());
-	
+	owner = _strdup(line.c_str());// line.c_str() - is reference to character buffer inside the string type
 
 	std::getline(in, line);
 	date = _strdup(line.c_str());
@@ -70,6 +73,19 @@ void Document::loadFromStream(istream& in) {
 	std::getline(in, line);
 	content = _strdup(line.c_str());
 
+
+	std::getline(in, line);
+	fontColor = _strdup(line.c_str());
+	
+
+	std::getline(in, line);
+	fontSize = atoi(line.c_str());
+
+	std::getline(in, line);
+	date = _strdup(line.c_str());
+
+	std::getline(in, line);
+	content = _strdup(line.c_str());
 }
 
 

@@ -262,16 +262,3 @@ int main()
 
 
 
-int main1()  {
-
-//    File* f = new File(100, "a", "b");
-//    f->write((char*)"mama rama");
-//    f->saveToDisk("d:\\test.txt");
-
-    File* f;
-    f = new File(1, "x", "y");
-    f->readFromDisk("d:\\test.txt");
-
-    return 0;
-    
-}

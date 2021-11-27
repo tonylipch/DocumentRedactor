@@ -1,12 +1,13 @@
 #pragma once
 #include "File.h"
 #include <iostream>
+#include "saveable.h"
 
 
 using namespace std;
 
 
-class Document : public File
+class Document : public File, public Saveable
 {
 private:
 	int fontSize;
